@@ -28,7 +28,7 @@ export function initMixin (Vue: Class<Component>) {
       endTag = `vue-perf-end:${vm._uid}`
       mark(startTag)
     }
-
+    
     // 避免这种情况被观察到的标志
     vm._isVue = true
     // 合并选项

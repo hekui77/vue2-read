@@ -21,5 +21,4 @@ stateMixin(Vue)
 eventsMixin(Vue)
 lifecycleMixin(Vue)
 renderMixin(Vue)
-
 export default Vue

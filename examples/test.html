@@ -8,25 +8,33 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ msg }}</h1>
-    <my-child />
+    <h1>{{ num }}</h1>
+    <button @click="handleClick">+1</button>
   </div>
 
   <script src="../dist/vue.js"></script>
   <script>
-    Vue.component('my-child', {
-      data() {
-        return {
-          msg: '我是全局的子组件'
-        }
-      },
-      template: `<p>{{ msg }}</p>`
-    })
     new Vue({
       el: '#app',
       data() {
         return {
-          msg: 'hello word'
+          num: 0,
+          msg: 'hello'
+        }
+      },
+      methods: {
+        handleClick() {
+          this.num++
+        }
+      },
+      computed: {
+        seeNum: function() {
+          return this.num += 10
+        }
+      },
+      watch: {
+        'num': function(val) {
+          // console.log('change:', val)
         }
       }
     })
